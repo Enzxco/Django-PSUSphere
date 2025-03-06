@@ -32,9 +32,9 @@ class Organization(BaseModel):
     
 class Student(BaseModel):
     student_id = models.CharField(max_length=15)
-    last_name = models.CharField(max_length=25)
+    last_name = models.CharField(max_length=25, default= "Unknown")
     first_name = models.CharField(max_length=25)
-    last_name = models.CharField(max_length=25, blank=True, null=True)
+    middle_name = models.CharField(max_length=25, blank=True, null=True)
     program = models.ForeignKey(Program, on_delete=models.CASCADE)
     
     def __str__(self):
