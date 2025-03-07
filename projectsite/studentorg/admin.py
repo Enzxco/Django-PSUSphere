@@ -7,11 +7,13 @@ admin.site.register(College)
 admin.site.register(Program)
 admin.site.register(Organization)
 
+
 @admin.register(Student)
 class StudentAdmin(admin.ModelAdmin):
     list_display = ("student_id", "last_name",
                     "first_name", "middle_name", "program")
     search_fields = ("last_name", "first_name",)
+
 
 @admin.register(OrgMember)
 class OrgMemberAdmin(admin.ModelAdmin):
