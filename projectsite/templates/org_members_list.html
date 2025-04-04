@@ -6,7 +6,7 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <div class="card-title">List of Organizations</div>
+                        <div class="card-title">List of Org Members</div>
                         <div class="card-category">Page Subtitle</div>
                     </div>
                     <br />
@@ -25,7 +25,7 @@
                         </div>
                         <div class="col-md-6">
                             <div class="pull-right">
-                                <a href="{% url 'organization-add' %}" class="btn btn-success btn-rounded">Add Organization</a>
+                                <a href="{% url 'org-members-add' %}" class="btn btn-success btn-rounded">Add Org Member</a>
                             </div>
                         </div>
                     </div>
@@ -34,26 +34,28 @@
                         <table class="table table-striped mt-3">
                             <thead>
                                 <tr>
-                                    <th scope="col">Name</th>
-                                    <th scope="col">College</th>
-                                    <th scope="col">Description</th>
+                                    <th scope="col">Student</th>
+                                    <th scope="col">Member Program</th>
+                                    <th scope="col">Organization</th>
+                                    <th scope="col">Date Joined</th>
                                     <th scope="col">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 {% for object in object_list %}
                                 <tr>
-                                    <td>{{ object.name }}</td>
-                                    <td>{{ object.college }}</td>
-                                    <td>{{ object.description }}</td>
+                                    <td>{{ object.student }}</td>
+                                    <td>{{ object.program }}</td>
+                                    <td>{{ object.organization }}</td>
+                                    <td>{{ object.date_joined }}</td>
                                     <td>
-                                        <a href="organization_list/{{ object.id }}">Edit</a>
-                                        <a href="organization_list/{{ object.id }}/delete" class="text-danger">Delete</a>
+                                        <a href="org_members_list/{{ object.id }}">Edit</a>
+                                        <a href="org_members_list/{{ object.id }}/delete" class="text-danger">Delete</a>
                                     </td>
                                 </tr>
                                 {% empty %}
                                 <tr>
-                                    <td colspan="4" style="text-align: center;">
+                                    <td colspan="5" style="text-align: center;">
                                         <p class="text-sm font-weight-bold mb-0">No Records Found</p>
                                     </td>
                                 </tr>
