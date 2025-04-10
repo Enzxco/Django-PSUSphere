@@ -20,6 +20,7 @@ from studentorg.views import HomePageView, OrganizationList, OrganizationCreateV
 from studentorg.views import OrgMembersList, OrgMembersCreateView, OrgMembersUpdateView, OrgMembersDeleteView
 from studentorg.views import StudentsList, StudentsCreateView, StudentsUpdateView, StudentsDeleteView
 from studentorg.views import CollegeList, CollegeCreateView, CollegeUpdateView, CollegeDeleteView
+from studentorg.views import ProgramList
 from studentorg import views
 
 urlpatterns = [
@@ -52,4 +53,8 @@ urlpatterns = [
     path('college_list/add', CollegeCreateView.as_view(), name='college-add'),
     path('college_list/<pk>', CollegeUpdateView.as_view(), name='college-update'),
     path('college_list/<pk>/delete', CollegeDeleteView.as_view(), name='college-delete'),
+
+    # Program URLs
+    path('program_list', views.ProgramList.as_view(), name='program-list'),
+
 ]
