@@ -69,3 +69,9 @@ class StudentsList(ListView):
     context_object_name = 'students'
     template_name = "students_list.html"
     paginate_by = 5
+
+class StudentsCreateView(CreateView):
+    model = Student
+    form_class = StudentsForm
+    template_name = 'students_add.html'
+    success_url = reverse_lazy('students-list')

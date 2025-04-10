@@ -18,7 +18,7 @@ from django.contrib import admin
 from django.urls import path
 from studentorg.views import HomePageView, OrganizationList, OrganizationCreateView, OrganizationUpdateView, OrganizationDeleteView
 from studentorg.views import OrgMembersList, OrgMembersCreateView, OrgMembersUpdateView, OrgMembersDeleteView
-from studentorg.views import StudentsList
+from studentorg.views import StudentsList, StudentsCreateView
 from studentorg import views
 
 urlpatterns = [
@@ -42,4 +42,5 @@ urlpatterns = [
     # Students URLs
 
     path('students_list', StudentsList.as_view(), name='students-list'),
+    path('students_list/add', StudentsCreateView.as_view(), name='students-add'),
 ]
