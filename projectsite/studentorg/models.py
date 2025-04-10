@@ -23,8 +23,7 @@ class Program(BaseModel):
     
 class Organization(BaseModel):
     name = models.CharField(max_length=250)
-    college = models.ForeignKey(
-        College, null=True, blank=True, on_delete=models.CASCADE)
+    college = models.ForeignKey(College, null=True, blank=True, on_delete=models.CASCADE)
     description = models.CharField(max_length=500)
     
     def __str__(self):
@@ -32,7 +31,7 @@ class Organization(BaseModel):
     
 class Student(BaseModel):
     student_id = models.CharField(max_length=15)
-    last_name = models.CharField(max_length=25, default= "Unknown")
+    last_name = models.CharField(max_length=25)
     first_name = models.CharField(max_length=25)
     middle_name = models.CharField(max_length=25, blank=True, null=True)
     program = models.ForeignKey(Program, on_delete=models.CASCADE)
