@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 """
 URL configuration for projectsite project.
 
@@ -23,7 +22,6 @@ urlpatterns = [
     path('', RedirectView.as_view(url='/admin/', permanent=True)),  # Redirect root URL to /admin/
     path('admin/', admin.site.urls),
 ]
-=======
 """
 URL configuration for projectsite project.
 
