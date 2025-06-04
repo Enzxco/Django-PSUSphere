@@ -46,10 +46,16 @@ from studentorg.views import StudentsList, StudentsCreateView, StudentsUpdateVie
 from studentorg.views import CollegeList, CollegeCreateView, CollegeUpdateView, CollegeDeleteView
 from studentorg.views import ProgramList, ProgramCreateView, ProgramUpdateView, ProgramDeleteView
 from studentorg import views
+from django.contrib.auth import views as auth_views
+from studentorg.views import chart_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.HomePageView.as_view(), name='home'),
+    #path('', views.HomePageView.as_view(), name='home'),Add commentMore actions
+    path('', chart_view, name='chart'),
+    #dashboard chart
+    path('chart/', chart_view, name='chart'),
+
 
     # Organization URLs
 
@@ -59,7 +65,7 @@ urlpatterns = [
     path('organization_list/<pk>/delete', OrganizationDeleteView.as_view(), name='organization-delete'),
 
     # Org Member URLs
-    
+
     path('org_members_list', OrgMembersList.as_view(), name='org-members-list'),
     path('org_members_list/add', OrgMembersCreateView.as_view(), name='org-members-add'),
     path('org_members_list/<pk>', OrgMembersUpdateView.as_view(), name='org-members-update'),
